@@ -1,0 +1,149 @@
+.wd-bg-white {
+    background-color: white;
+}
+.wd-fg-black {
+    color: black;
+}
+.wd-fg-darkgrey {
+    color: darkgrey;
+}
+
+.wd-avatar-logo {
+    width: 48px; 
+    border-radius: 50%;   
+}
+.wd-tuit-image {
+    border-radius: 15px 15px 0 0;
+    width: 100%;
+    display: block;
+}
+
+.wd-tuit {
+    margin-top: 10px;
+    display: flex;
+}
+
+.wd-tuit-size {
+    max-width: 540px;
+}
+
+.wd-tuit-left-column {
+    margin-left: 15px;
+    max-width: 60px;
+    width: 100%;
+}
+.wd-tuit-right-column {
+    max-width: 450px;
+    width: 100%;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.wd-tuit-heading {
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+
+.wd-tuit-border {
+    border-width: 1px;
+    border-style: solid;
+    border-color: #e0e0e0;
+    border-top: none;
+    margin-left: 12px;
+    
+    padding: 5px;
+}
+
+.wd-first-tuit-border {
+    border-width: 1px;
+    border-style: solid;
+    border-color: #e0e0e0;
+    margin-left: 12px;
+    margin-top: 8px;
+    padding: 5px;
+}
+
+.wd-tuit-inner-border {
+    border-width: 1px;
+    border-style: solid;
+    border-color: #AAAAAA;
+}
+
+.wd-rounded-tuit {
+    border-radius: 0 0 15px 15px;
+}
+
+.wd-padding-link {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+.wd-darkgrey-heading {
+    color: darkgray;
+    font-size: 12px;
+}
+.wd-darkgrey-content {
+    color: darkgray;
+    font-size: 13px;
+}
+
+.wd-thin-margin {
+    margin-top: 3px;
+    margin-bottom: 3px;
+}
+.wd-thick-bottom-margin {
+    margin-bottom: 10px;
+}
+
+.wd-remove-hyper-link-style {
+    text-decoration: none;
+}
+
+.wd-icons {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: 85%;
+    display: flex;
+    justify-content: space-between;
+}
+.wd-icon-number-space {
+    margin-left: 8px;
+}
+.wd-liked {
+    color: #ff3600;
+}
+
+.wd-fg-blue {
+    color: #1DA1F2;
+}
+
+.wd-top-row {
+    display: flex;
+    justify-content: space-between;
+    margin-left: 20px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    margin-right: 5px;
+}
+
+.wd-ellipsis-padding {
+    padding-right: 8px;  
+}
+
+.wd-All-Bookmarks {
+    font-size: 1.1em;
+    font-weight: bold;
+    margin-left: 35px;
+}
+
+.wd-heading-row {
+    display: flex;
+    justify-content: space-between;
+}
+
+.wd-sml-ellipsis {
+    color: darkgray;
+    margin-right: 2px;  
+}
+
+

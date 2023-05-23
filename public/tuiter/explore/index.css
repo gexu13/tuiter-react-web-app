@@ -1,0 +1,178 @@
+.wd-color-white {
+    color: white;
+}
+
+.wd-tuit-list {
+    list-style-type: none;
+    padding: 0px;
+    margin-left: 0px;
+}
+.wd-tuit-title {
+    font-size: 12px;
+    padding: 0px;
+    margin: 0px;
+    font-weight: bold;
+}
+.wd-tuit-trending-and-number {
+    font-size: 10px;
+    color: darkgray;
+}
+.wd-screen-space {
+    padding-left: 10px;
+}
+
+.wd-tuit-number-margin {
+    margin-top: 3px;
+    margin-bottom: 20px;
+}
+.wd-tuit-trending-margin {
+    margin-bottom: 3px;
+}
+
+.wd-small-left-padding {
+    padding-left: 10px;
+}
+
+.wd-pos-relative {
+    position: relative;
+    
+}
+
+.wd-input-field {
+    margin-top: 15px;
+    background-color: lightgray;
+    height: 30px;
+    padding-left: 45px;
+    margin-left: 10px;
+    width: 70%;
+    border: none;
+    border-radius: 15px;
+}
+.wd-gear-icon {
+    
+    float: right;
+    margin-right: 10px;
+    margin-top: 25px;
+}
+
+.wd-magnifying-glass {
+    position: absolute;
+    top: 25px;
+    left: 24px;
+}
+
+.wd-white-text-absolute {
+    position: absolute;
+    top: 185px;
+    left: 10px;
+}
+
+.wd-z-index-bring-to-front {
+    z-index: 10;
+}
+
+.wd-tabs {
+    display: flex;
+    list-style-type: none;
+    padding: 0px;
+    justify-content: space-between;
+}
+
+.wd-tabs-label {
+    font-size: 12px;
+    color: darkgray;
+    padding: 10px;
+    cursor: pointer;
+    
+    
+}
+
+.wd-remove-hyper-link-style {
+    text-decoration: none;
+}
+
+.wd-tabs-selected {
+    
+    color: black;
+    font-weight: bold;
+    border-width: 0px 0px 4px 0px;
+    border-bottom: 4px;
+    border-style: solid;
+    border-color: #1DA1F2;
+}
+
+.wd-div-border {
+    border: 1px #e0e0e0;
+    border-style: solid;
+}
+
+.wd-trending-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.wd-ellipsis-padding {
+    padding-right: 10px;  
+}
+
+.wd-tuit-button{
+    width: 100%;
+    margin-top: 5px;
+}
+
+.wd-100-percent-image{
+    width: 100%;
+}
+
+.wd-image-wrapper {
+    position: relative;
+}
+.wd-text-overlay {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    font-size: 1.5em;
+    color: white;
+    font-weight: bolder;
+}
+
+.wd-tuit-grey {
+    color: darkgray;
+    font-size: 13px;
+    margin-bottom: 5px;
+}
+
+.wd-tuit-bold-title {
+    font-weight: bold;
+    font-size: 14px;
+    margin-bottom: 5px;
+
+}
+
+.wd-tuit-content {
+    font-weight: bold;
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+
+.wd-who-to-follow-image {
+    width: 48px;
+    height: 48px;
+}
+
+.wd-who-to-follow-text {
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+.wd-icon-wrapper {
+    position: relative;
+}
+.wd-icon-overlay {
+    position: absolute;
+    top: 11px;
+    left: 30px;
+}
+.wd-follow-bottom {
+    font-size: 0.9em;
+}
