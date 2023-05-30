@@ -1,0 +1,5 @@
+[
+    {"id": "000", "title": "Buy milk", "status": "CANCELED", "done": true},
+    {"id": "001", "title": "Pickup the kids", "status": "IN PROGRESS", "done": false},
+    {"id": "002", "title": "Walk the dog", "status": "DEFERRED", "done": false}
+]
