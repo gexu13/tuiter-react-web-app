@@ -15,7 +15,7 @@ const TuitsList = () => {
                     })
                 }
             </ul>
-            {JSON.stringify(tuits)}
+            {/* {JSON.stringify(tuits)} */}
         </>
     );
 }
