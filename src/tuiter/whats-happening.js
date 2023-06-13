@@ -13,6 +13,14 @@ import { createTuitThunk } from "./services/tuits-thunks";
 
 const WhatsHappening = () => {
 
+    const currentUser = {
+        "username": "NASA",
+        "handle": "@nasa",
+        "image": "nasa.png",
+        "time": "2h",
+        "topic": "Space",
+    };
+
     const dispatch = useDispatch();
 
     let [whatsHappening, setWhatsHappening] = useState("");
@@ -25,6 +33,8 @@ const WhatsHappening = () => {
 
     const tuitClickHandler = () => {
         const newTuit = {
+            ...currentUser,
+            title: whatsHappening,
             tuit: whatsHappening,
             // title: whatsHappening,
         };
