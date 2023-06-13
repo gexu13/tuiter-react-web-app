@@ -7,9 +7,7 @@ import { TbCalendarStats } from "react-icons/tb";
 import { BiBold, BiItalic } from "react-icons/bi";
 import { HiOutlineLocationMarker } from "react-icons/hi";
 import { useDispatch } from "react-redux";
-import { createTuit } from "./reducers/tuit-reducer";
-
-
+import { createTuitThunk } from "./services/tuits-thunks";
 
 
 
@@ -30,7 +28,7 @@ const WhatsHappening = () => {
             tuit: whatsHappening,
             // title: whatsHappening,
         };
-        dispatch(createTuit(newTuit));
+        dispatch(createTuitThunk(newTuit));
         setWhatsHappening("");
     }
 

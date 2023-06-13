@@ -3,7 +3,7 @@ import React from "react";
 const TuitSummaryItem = ({
     tuit = {
         "topic": "Space",
-        "userName": "SpaceX",
+        "username": "SpaceX",
         "time": "2h",
         "title": `Tesla CyberTruck lands on Mars and picks up
                   the Curiosity rover on its 6' bed`,
@@ -14,7 +14,7 @@ const TuitSummaryItem = ({
         <li className="list-group-item">
             <div className="row">
                 <div className="col-10">
-                    {tuit.userName} · {tuit.time}
+                    {tuit.username} · {tuit.time}
                     <div className="fw-bolder">{tuit.topic}</div>
                     <div>{tuit.title}</div>
                 </div>

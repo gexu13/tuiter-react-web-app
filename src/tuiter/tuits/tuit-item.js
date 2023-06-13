@@ -3,13 +3,15 @@ import TuitStats from "./tuit-stats";
 import { AiFillCheckSquare } from "react-icons/ai"
 import { RxCross2 } from 'react-icons/rx';
 import { useDispatch } from "react-redux";
-import { deleteTuit } from "../reducers/tuit-reducer";
+// import { deleteTuit } from "../reducers/tuit-reducer";
+import { deleteTuitThunk } from "../services/tuits-thunks";
+
 
 const TuitItem = (
     {
         tuit= { 
             "topic": "Space",  
-            "userName": "SpaceX",
+            "username": "SpaceX",
             "title": "100s of SpaceX Starships land on Mars after a 6 month journey. 1000s of Martian colonists being building Mars Base 1",
             "time": "2h",   "image": "spacex.png",
             "liked": true,
@@ -24,7 +26,7 @@ const TuitItem = (
     const dispatch = useDispatch();
 
     const deleteTuitHandler = (tuit) => {
-        dispatch(deleteTuit(tuit._id));
+        dispatch(deleteTuitThunk(tuit._id));
     };
 
     return (
@@ -47,7 +49,7 @@ const TuitItem = (
 
                     <div>
                         <span className="fw-bolder me-1">
-                            {tuit.userName}
+                            {tuit.username}
                             <span className="text-primary ms-1">
                                 <AiFillCheckSquare/>
                             </span>

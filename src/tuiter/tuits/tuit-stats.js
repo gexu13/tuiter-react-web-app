@@ -3,8 +3,9 @@ import { BiMessageRounded } from "react-icons/bi";
 import { AiOutlineRetweet, AiFillHeart, AiOutlineHeart } from "react-icons/ai";
 import { CiShare1 } from "react-icons/ci";
 import { useDispatch } from "react-redux";
-import { likeTuit, unlikeTuit} from "../reducers/tuit-reducer";
-import { click } from "@testing-library/user-event/dist/click";
+import { updateTuitThunk } from "../services/tuits-thunks";
+import { FiThumbsDown } from "react-icons/fi";
+import "./index.css";
 
 
 const TuitStats = (
@@ -25,39 +26,45 @@ const TuitStats = (
 
     const dispatch = useDispatch();
 
-    const clickLike = (tuit) => {
-        if(tuit.liked === false) {
-            dispatch(likeTuit(tuit));
-        }
+    // const clickLike = (tuit) => {
+    //     if(tuit.liked === false) {
+    //         dispatch(likeTuit(tuit));
+    //     }
 
-        if(tuit.liked === true) {
-            dispatch(unlikeTuit(tuit));
-        }
-    }
+    //     if(tuit.liked === true) {
+    //         dispatch(unlikeTuit(tuit));
+    //     }
+    // }
 
 
     return (
-        <div className="row mt-1 mb-0">
-            <div className="col-3">
+        <div className="wd-row mt-1 mb-0">
+            <div className="wd-col-custom-5">
                 <button className="btn btn-link text-decoration-none text-secondary p-0">
                     <BiMessageRounded/> {tuit.replies}
                 </button>
                 
             </div>
-            <div className="col-3">
+            <div className="wd-col-custom-5">
                 <button className="btn btn-link text-decoration-none text-secondary p-0">
                     <AiOutlineRetweet/> {tuit.retuits}
                 </button>
             </div>
-            <div className="col-3">
-                <button onClick={()=> clickLike(tuit)}
+            <div className="wd-col-custom-5">
+                <button onClick={()=> dispatch(updateTuitThunk({...tuit, likes: tuit.likes + 1, liked: true }))}
                     className="btn btn-link text-decoration-none text-secondary p-0">
                     {tuit.liked === true ? 
                         <AiFillHeart className="text-danger"/> :
                         <AiOutlineHeart/>} {tuit.likes}
                 </button>
             </div>
-            <div className="col-3">
+            <div className="wd-col-custom-5">
+                <button onClick={() => dispatch(updateTuitThunk({...tuit, dislikes: tuit.dislikes - 1}))}
+                    className="btn btn-link text-decoration-none text-secondary p-0">
+                    <FiThumbsDown/> {tuit.dislikes}
+                </button>
+            </div>
+            <div className="wd-col-custom-5">
                 <button className="btn btn-link text-decoration-none text-secondary p-0">
                     <CiShare1/>
                 </button>
