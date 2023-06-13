@@ -35,7 +35,7 @@ const NavigationSidebar = () => {
             <div className="list-group-item"><BsTwitter/></div>
             {links.map((link, index)=> {
                     return(
-                        <div>
+                        <div key={index}>
                         { link.displayWhenLogin &&
                         (<Link key={index} to={`/tuiter/${link.name}`} 
                             className={`list-group-item text-capitalize

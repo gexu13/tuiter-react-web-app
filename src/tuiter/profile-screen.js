@@ -78,6 +78,7 @@ function ProfileScreen() {
                     onClick={() => {saveProfile()}}>
                 Save
             </button>
+            {JSON.stringify(currentUser)}
         </div>
     );
 

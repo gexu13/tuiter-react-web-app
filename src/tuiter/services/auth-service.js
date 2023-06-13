@@ -1,8 +1,9 @@
 import axios from "axios";
-// const SERVER_API_URL = process.env.REACT_APP_API_BASE;
-// const USERS_URL = `${SERVER_API_URL}/users`;
 
-const TUITS_API = 'https://tuiter-node-server-app-2hlj.onrender.com/api/users';
+const SERVER_API_URL = process.env.REACT_APP_SERVER_API_URL;
+const USERS_URL = `${SERVER_API_URL}/users`;
+
+// const USERS_URL = 'https://tuiter-node-server-app-2hlj.onrender.com/api/users';
 
 
 const api = axios.create({ withCredentials: true });
@@ -26,12 +27,12 @@ export const profile = async () => {
 
 export const updateUser = async (user) => { 
     const response = await api.put(`${USERS_URL}`, user);
-    console.log("response", response.data);
     return response.data;
 };
 
 export const register = async (user) => {
     const response = await api.post(`${USERS_URL}/register`, user);
+    console.log("response", response.data);
     return response.data;
 };
 
