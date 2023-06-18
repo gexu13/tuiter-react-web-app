@@ -7,7 +7,7 @@ import { useDispatch } from "react-redux";
 import { deleteTuitThunk } from "../services/tuits-thunks";
 
 
-const TuitItem = (
+const MyTuitItem = (
     {
         tuit= { 
             "topic": "Space",  
@@ -22,6 +22,14 @@ const TuitItem = (
             "tuit": "You want to wake up in the morning and think the future is going to be great - and that’s what being a spacefaring civilization is all about. It’s about believing in the future and thinking that the future will be better than the past. And I can’t think of anything more exciting than going out there and being among the stars"}
     }
 ) => {
+
+    
+
+    const dispatch = useDispatch();
+
+    const deleteTuitHandler = (tuit) => {
+        dispatch(deleteTuitThunk(tuit._id));
+    };
 
     const displayTime = () => {
         var currentTime = Date.now();
@@ -41,12 +49,6 @@ const TuitItem = (
         }
     };
 
-    // const dispatch = useDispatch();
-
-    // const deleteTuitHandler = (tuit) => {
-    //     dispatch(deleteTuitThunk(tuit._id));
-    // };
-
     return (
         <li className="list-group-item">
             <div className="row">
@@ -55,14 +57,14 @@ const TuitItem = (
                 </div>
                 <div className="col-10">
                     <div>
-                        {/* <button className="float-end btn btn-link p-0
+                        <button className="float-end btn btn-link p-0
                                         text-decoration-none text-secondary" 
                                 onClick={() => deleteTuitHandler(tuit)}>
                             <RxCross2 />
-                        </button> */}
+                        </button>
                         
-                        {/* <i className="bi bi-x-lg float-end"
-                            onClick={() => deleteTuitHandler(tuit)}></i> */}
+                        <i className="bi bi-x-lg float-end"
+                            onClick={() => deleteTuitHandler(tuit)}></i>
                     </div>
 
                     <div>
@@ -85,4 +87,4 @@ const TuitItem = (
 
 }
 
-export default TuitItem;
+export default MyTuitItem;

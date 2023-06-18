@@ -22,4 +22,9 @@ export const createTuitThunk = createAsyncThunk(
 export const updateTuitThunk = createAsyncThunk(
     "tuits/updateTuit",
     async (tuit) => await service.uptateTuit(tuit)
+); 
+
+export const findTuitsByAuthorThunk = createAsyncThunk(
+    "tuits/findTuitsByAuthor",
+    async () => await service.findTuitsByAuthor()
 );

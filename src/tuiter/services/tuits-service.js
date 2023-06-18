@@ -1,13 +1,15 @@
 import axios from "axios";
 
 
-// const API_BASE = process.env.REACT_APP_API_BASE;
-// const TUITS_API = `${API_BASE}/tuits`;
+const API_BASE = process.env.REACT_APP_API_BASE;
+const TUITS_API = `${API_BASE}/tuits`;
 
-const TUITS_API = 'https://tuiter-node-server-app-a6-5c1d.onrender.com/api/tuits';
+const api = axios.create({ withCredentials: true });
+
+// const TUITS_API = 'https://tuiter-node-server-app-a6-5c1d.onrender.com/api/tuits';
 
 export const createTuit = async (tuit) => {
-    const response = await axios.post(TUITS_API, tuit);
+    const response = await api.post(TUITS_API, tuit);
     return response.data;
 };
 
@@ -15,6 +17,12 @@ export const findTuits = async () => {
     const response = await axios.get(TUITS_API);
     const tuits = response.data;
     // console.log(tuits);
+    return tuits;
+};
+
+export const findTuitsByAuthor = async () => {
+    const response = await api.get(`${TUITS_API}/my_tuits`);
+    const tuits = response.data;
     return tuits;
 };
 

@@ -1,9 +1,11 @@
 // import tuits from "./tuits.json";
 import { createSlice } from "@reduxjs/toolkit";
-import { createTuitThunk, deleteTuitThunk, findTuitsThunk, updateTuitThunk } from "../services/tuits-thunks";
+import { createTuitThunk, deleteTuitThunk, findTuitsThunk, updateTuitThunk, findTuitsByAuthorThunk } from "../services/tuits-thunks";
 import { FaSearch } from "react-icons/fa";
 
 const initialState = {
+    myTuits: [],
+    loading_myTuits: false,
     tuits: [],
     loading: false,
 }
@@ -35,14 +37,24 @@ const tuitSlice = createSlice(
                                                                  state.tuits = payload},
             [findTuitsThunk.rejected]: (state, action) => {state.loading = false
                                                            state.error = action.error},
-            [deleteTuitThunk.fulfilled]: (state, { payload }) => {state.loading = false
-                                                                  state.tuits = state.tuits.filter(t => t._id !== payload)},
+            [deleteTuitThunk.fulfilled]: (state, { payload }) => {state.loading = false;
+                                                                  state.tuits = state.tuits.filter(t => t._id !== payload);
+                                                                  state.myTuits = state.myTuits.filter(t => t._id !== payload)},
             [createTuitThunk.fulfilled]: (state, {payload}) => {state.loading = false
                                                                 state.tuits.push(payload)},
             [updateTuitThunk.fulfilled]: (state, {payload}) => {state.loading = false
                                                                 const tuitIndex = state.tuits.findIndex(t => t._id === payload._id);
                                                                 state.tuits[tuitIndex] = {...state.tuits[tuitIndex], ...payload};
-                                                            }
+                                                                const myTuitIndex = state.myTuits.findIndex(t => t._id === payload._id);
+                                                                state.myTuits[myTuitIndex] = {...state.myTuits[tuitIndex], ...payload};
+                                                                
+                                                            },
+            [findTuitsByAuthorThunk.fulfilled]: (state, {payload}) => {state.loading_myTuits = false
+                                                                        state.myTuits = payload},
+            [findTuitsByAuthorThunk.pending]: (state) => {state.loading_myTuits = true
+                                                            state.myTuits = []},
+            [findTuitsByAuthorThunk.rejected]: (state, action) => {state.loading_myTuits = false
+                                                                    state.error = action.error},
         },
         reducers: {
             // likeTuit: (state, action) => {

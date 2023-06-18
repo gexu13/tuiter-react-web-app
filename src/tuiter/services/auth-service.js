@@ -1,9 +1,9 @@
 import axios from "axios";
 
-// const SERVER_API_URL = process.env.REACT_APP_API_BASE;
-// const USERS_URL = `${SERVER_API_URL}/users`;
+const SERVER_API_URL = process.env.REACT_APP_API_BASE;
+const USERS_URL = `${SERVER_API_URL}/users`;
 
-const USERS_URL = 'https://tuiter-node-server-app-a6-5c1d.onrender.com/api/users';
+// const USERS_URL = 'https://tuiter-node-server-app-a6-5c1d.onrender.com/api/users';
 
 
 const api = axios.create({ withCredentials: true });

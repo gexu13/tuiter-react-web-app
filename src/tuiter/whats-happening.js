@@ -8,19 +8,12 @@ import { BiBold, BiItalic } from "react-icons/bi";
 import { HiOutlineLocationMarker } from "react-icons/hi";
 import { useDispatch } from "react-redux";
 import { createTuitThunk } from "./services/tuits-thunks";
-
+import { useSelector } from "react-redux";
 
 
 const WhatsHappening = () => {
 
-    const currentUser = {
-        "username": "NASA",
-        "handle": "@nasa",
-        "image": "nasa.png",
-        "time": "2h",
-        "topic": "Space",
-    };
-
+    const { currentUser } = useSelector(state => state.user);
     const dispatch = useDispatch();
 
     let [whatsHappening, setWhatsHappening] = useState("");
@@ -33,7 +26,7 @@ const WhatsHappening = () => {
 
     const tuitClickHandler = () => {
         const newTuit = {
-            ...currentUser,
+
             title: whatsHappening,
             tuit: whatsHappening,
             // title: whatsHappening,
@@ -45,7 +38,7 @@ const WhatsHappening = () => {
     return (
         <div className="row">
             <div className="col-auto">
-                <img className="rounded-circle" src="../../images/nasa.png" width={60} />
+                <img className="rounded-circle" src={`../../images/${currentUser.avatar}`} width={60} />
             </div>
             <div className="col-10">
                 <textarea value={whatsHappening} placeholder="What's happening?"

@@ -10,11 +10,30 @@ const TuitSummaryItem = ({
         "image": "tesla.png"
     }
 }) => {
+
+    const displayTime = () => {
+        var currentTime = Date.now();
+        var selectedTime = new Date(tuit.postTime).getTime();
+        var timeDifference = currentTime - selectedTime;
+        var mins = Math.floor(timeDifference / (1000 * 60));
+        var hours = Math.floor(timeDifference / (1000 * 60 * 60));
+        var days = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
+        if (days > 0) {
+            return days + "d";
+        } else if (hours > 0) {
+            return hours + "h";
+        } else if (mins > 0) {
+            return mins + "m";
+        } else {
+            return "now";
+        }
+    };
+
     return (
         <li className="list-group-item">
             <div className="row">
                 <div className="col-10">
-                    {tuit.username} · {tuit.time}
+                    {tuit.username} · {displayTime()}
                     <div className="fw-bolder">{tuit.topic}</div>
                     <div>{tuit.title}</div>
                 </div>

@@ -10,12 +10,13 @@ function RegisterScreen() {
     const [firstName, setFirstName] = useState("");
     const [lastName, setLastName] = useState("");
     const [password, setPassword] = useState("");
+    const [avatar, setAvatar] = useState("avatar-1.png");
 
     const navigate = useNavigate();
     const dispatch = useDispatch();
     const handleRegister = async () => {
         try {
-            const result = await dispatch(registerThunk({username, firstName, lastName, password})).unwrap()
+            const result = await dispatch(registerThunk({username, firstName, lastName, password, avatar})).unwrap()
             navigate("/tuiter/profile");
         }
         catch (e) {
@@ -45,6 +46,15 @@ function RegisterScreen() {
                 <label>Password</label>
                 <input className='form-control' type="password" value={password}
                     onChange={e => setPassword(e.target.value)}/>
+            </div>
+            <div className='mt-2'>
+                <label htmlFor="avatar">Select your avatar</label>
+                <select className="form-control form-select" id="avatar" onChange={e => setAvatar(e.target.value)}>
+                    <option value="avatar-1.png" disabled>Select one</option>
+                    <option value="avatar-1.png" >One</option>
+                    <option value="avatar-2.png" >Two</option>
+                    <option value="avatar-3.png" >Three</option>
+                </select>
             </div>
             <button className='btn btn-primary mt-2'
                 onClick={handleRegister}>

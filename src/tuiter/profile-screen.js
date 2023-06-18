@@ -2,15 +2,17 @@ import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router';
 import { profileThunk, logoutThunk, updateUserThunk } from './services/auth-thunks';
+import { findTuitsByAuthorThunk } from './services/tuits-thunks';
+import MyTuitItem from './tuits/my-tuit-item';
 
 
 function ProfileScreen() {
 
 
     const { currentUser } = useSelector(state => state.user);
+    const { myTuits } = useSelector(state => state.tuits);
 
     const [profile, setProfile] = useState(currentUser);
-
 
     const dispatch = useDispatch();
     const navigate = useNavigate();
@@ -24,8 +26,14 @@ function ProfileScreen() {
         setProfile(payload);
     }
 
+    const loadMyTuits = async () => {
+        await dispatch(findTuitsByAuthorThunk());
+    }
+
+
     useEffect(() => {
         loadProfile();
+        loadMyTuits();
     }, []);
 
     return (
@@ -78,7 +86,14 @@ function ProfileScreen() {
                     onClick={() => {saveProfile()}}>
                 Save
             </button>
-            {/* {JSON.stringify(currentUser)} */}
+
+            <ul className="list-group mt-3">
+            {
+                myTuits.map(tuit => {
+                    return <MyTuitItem key={tuit._id} tuit={tuit}/>
+                })
+            }          
+            </ul>
         </div>
     );
 
