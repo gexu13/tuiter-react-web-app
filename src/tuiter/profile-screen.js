@@ -48,12 +48,12 @@ function ProfileScreen() {
                         
                         <label>Username</label>
                         <input className='form-control'
-                            type="text" value={profile.username} disabled/>
+                            type="text" value={currentUser.username} disabled/>
                     </div>
                     <div>
                         <label>First Name</label>
                         <input className='form-control' 
-                            type="text" value={profile.firstName}
+                            type="text" value={currentUser.firstName}
                             onChange={(e) => {
                                 const newProfile = {...profile, firstName: e.target.value};
                                 setProfile(newProfile);
@@ -62,7 +62,7 @@ function ProfileScreen() {
                     <div>
                         <label>Last Name</label>
                         <input className='form-control'
-                            type="text" value={profile.lastName}
+                            type="text" value={currentUser.lastName}
                             onChange={(e) => {
                                 const newProfile = {...profile, lastName: e.target.value};
                                 setProfile(newProfile);
@@ -71,7 +71,7 @@ function ProfileScreen() {
                     <div>
                         <label>Password</label>
                         <input className='form-control'
-                            type="password" value={profile.password}
+                            type="password" value={currentUser.password}
                             onChange={(e) => {
                                 const newProfile = {...profile, password: e.target.value};
                                 setProfile(newProfile);
