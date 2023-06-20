@@ -39,9 +39,11 @@ function ProfileScreen() {
     return (
         <div>
             <h1>Profile Screen</h1>
-            { profile && 
-                (<div>
+            {/* { profile && 
+                ( */}
+                <div>
                     <div>
+                        {JSON.stringify(profile)}
                         <label>Username</label>
                         <input className='form-control'
                             type="text" value={profile.username} disabled/>
@@ -74,7 +76,7 @@ function ProfileScreen() {
                         }}/>
                     </div>
                 </div>
-            )}
+                {/* ) */}
             <button className='btn btn-danger mt-2 me-2'
                     onClick={() => {
                                     dispatch(logoutThunk());
