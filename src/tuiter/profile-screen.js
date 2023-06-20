@@ -43,8 +43,7 @@ function ProfileScreen() {
                 (
                 <div>
                     <div>
-                        {JSON.stringify(profile)}
-                        {console.log(profile)}
+                        {console.log(currentUser)}
                         
                         <label>Username</label>
                         <input className='form-control'
