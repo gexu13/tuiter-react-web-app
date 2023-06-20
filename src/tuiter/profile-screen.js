@@ -42,17 +42,15 @@ function ProfileScreen() {
             { profile && 
                 (
                 <div>
-                    <div>
-                        {console.log(currentUser)}
-                        
+                    <div>                        
                         <label>Username</label>
                         <input className='form-control'
-                            type="text" value={currentUser.username} disabled/>
+                            type="text" value={profile.username} disabled/>
                     </div>
                     <div>
                         <label>First Name</label>
                         <input className='form-control' 
-                            type="text" value={currentUser.firstName}
+                            type="text" value={profile.firstName}
                             onChange={(e) => {
                                 const newProfile = {...profile, firstName: e.target.value};
                                 setProfile(newProfile);
@@ -61,7 +59,7 @@ function ProfileScreen() {
                     <div>
                         <label>Last Name</label>
                         <input className='form-control'
-                            type="text" value={currentUser.lastName}
+                            type="text" value={profile.lastName}
                             onChange={(e) => {
                                 const newProfile = {...profile, lastName: e.target.value};
                                 setProfile(newProfile);
@@ -70,7 +68,7 @@ function ProfileScreen() {
                     <div>
                         <label>Password</label>
                         <input className='form-control'
-                            type="password" value={currentUser.password}
+                            type="password" value={profile.password}
                             onChange={(e) => {
                                 const newProfile = {...profile, password: e.target.value};
                                 setProfile(newProfile);
